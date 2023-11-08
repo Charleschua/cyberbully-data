@@ -2,15 +2,18 @@
 name = "emkademy"
 version = "0.1.0"
 description = ""
-authors = ["Kıvanç Yüksel <emkademy@gmail.com>"]
+authors = ["Charles Chua <charleschua19@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
 hydra-core = "~=1.3.2"
 pydantic = "~=1.10.7"
+google-cloud-secret-manager = "~=2.16.1"
+dvc = {version = "~=2.56.0", extras = ["gdrive", "gs"]}
 
 [tool.poetry.group.dev.dependencies]
+jupyterlab = "~=3.6.3"
 pytest = "~=7.3"
 black = "~=23.3"
 isort = "~=5.12"
@@ -34,7 +37,7 @@ ensure_newline_before_comments = true
 line_length = 120
 indent = 4
 lines_between_types = 1
-known_first_party = ["cybulde"]
+known_first_party = ["cyberbully"]
 default_section = "THIRDPARTY"
 sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 
