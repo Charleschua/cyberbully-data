@@ -2,16 +2,18 @@ from pathlib import Path
 
 from cyberbully.config_schemas.config_schema import Config
 from cyberbully.utils.config_utils import get_config
-from cyberbully.utils.data_utils import initialize_dvc
+from cyberbully.utils.data_utils import initialize_dvc, initialize_dvc_storage
 from cyberbully.utils.utils import get_logger
 
 
 @get_config(config_path="../configs", config_name="config")
 def version_data(config: Config) -> None:
+    
     # logger = get_logger(Path(__file__).name)
     # logger.info()
     
     initialize_dvc()
+    initialize_dvc_storage(config.dvc_remote_name, config.dvc_remote_url)
 
 
 if __name__ == "__main__":

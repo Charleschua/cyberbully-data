@@ -24,7 +24,7 @@ def initialize_dvc() -> None:
     run_shell_command("git add .dvc")
     run_shell_command("git commit -nm 'Initialized DVC'")
 
-""" 
+
 def initialize_dvc_storage(dvc_remote_name: str, dvc_remote_url: str) -> None:
     if not run_shell_command("dvc remote list"):
         DATA_UTILS_LOGGER.info("Initializing DVC storage...")
@@ -57,4 +57,4 @@ def make_new_data_version(dvc_raw_data_folder: str, dvc_remote_name: str) -> Non
             return
         commit_to_dvc(dvc_raw_data_folder, dvc_remote_name)
     except CalledProcessError:
-        commit_to_dvc(dvc_raw_data_folder, dvc_remote_name) """
+        commit_to_dvc(dvc_raw_data_folder, dvc_remote_name)
