@@ -1,9 +1,6 @@
-from pathlib import Path
-
 from cyberbully.config_schemas.config_schema import Config
 from cyberbully.utils.config_utils import get_config
-from cyberbully.utils.data_utils import initialize_dvc, initialize_dvc_storage
-from cyberbully.utils.utils import get_logger
+from cyberbully.utils.data_utils import initialize_dvc, initialize_dvc_storage, commit_to_dvc
 
 
 @get_config(config_path="../configs", config_name="config")
@@ -14,6 +11,8 @@ def version_data(config: Config) -> None:
     
     initialize_dvc()
     initialize_dvc_storage(config.dvc_remote_name, config.dvc_remote_url)
+
+    commit_to_dvc(config.dvc_raw_data_folder, config.dvc_remote_name)
 
 
 if __name__ == "__main__":
