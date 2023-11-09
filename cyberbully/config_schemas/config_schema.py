@@ -5,7 +5,7 @@ from pydantic.dataclasses import dataclass
 @dataclass
 class Config:
     dvc_remote_name: str = "gcs-storage"
-    dvc_remote_url: str = "gs://cyberbully-bucket/data/raw"
+    dvc_remote_url: str = "gs://cyberbully/cyberbully-bucket/data/raw"
     dvc_raw_data_folder: str = "data/raw"
 
 
