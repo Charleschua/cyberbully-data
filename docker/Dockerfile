@@ -46,7 +46,7 @@ COPY ./docker/scripts/* /
 RUN chown -R ${USER_NAME} /*.sh && chmod +x /*.sh
 USER ${USER_NAME}
 
-RUN git config --global user.email "charleschua19@gmail.com" \
+RUN git config --global user.email "charliectw19@gmail.com" \
     && git config --global user.name "charles"
 
 COPY . /app/
