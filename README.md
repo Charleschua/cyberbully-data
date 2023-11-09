@@ -1,2 +1,2 @@
-# cybulde-project-template
-A simple template for Cybulde project
+# cyberbully-project-template
+A simple template for Cyberbully project
