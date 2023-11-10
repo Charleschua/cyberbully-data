@@ -4,7 +4,7 @@ services:
   app:
     user: "${USER_ID:-1000}"
     hostname: "${HOST_NAME:-emkademy}"
-    image: cyberbuuly-data
+    image: cyberbully-data
     container_name: cyberbully-data-container
     build:
       context: .
