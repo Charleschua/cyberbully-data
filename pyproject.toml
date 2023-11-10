@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "emkademy"
+name = "cyberbully"
 version = "0.1.0"
 description = ""
 authors = ["Charles Chua <charleschua19@gmail.com>"]
