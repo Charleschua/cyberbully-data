@@ -3,9 +3,9 @@ import socket
 import subprocess
 
 import pkg_resources
-# import symspellpy
+import symspellpy
 
-# from symspellpy import SymSpell
+from symspellpy import SymSpell
 
 
 def get_logger(name: str) -> logging.Logger:
@@ -15,8 +15,8 @@ def get_logger(name: str) -> logging.Logger:
 def run_shell_command(cmd: str) -> str:
     return subprocess.run(cmd, text=True, shell=True, check=True, capture_output=True).stdout
 
-""" 
-class SpellCorrectionModel:
+
+""" class SpellCorrectionModel:
     def __init__(
         self,
         max_dictionary_edit_distance: int = 2,

@@ -10,7 +10,7 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile
       args:
-        USER_NAME: "${USER_NAME:-charles}"
+        USER_NAME: "${USER_NAME:-charleschua}"
         USER_ID: "${USER_ID:-1000}"
     volumes:
       - ./:/app/
