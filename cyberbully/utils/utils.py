@@ -2,10 +2,10 @@ import logging
 import socket
 import subprocess
 
-import pkg_resources
-import symspellpy
+# import pkg_resources
+# import symspellpy
 
-from symspellpy import SymSpell
+# from symspellpy import SymSpell
 
 
 def get_logger(name: str) -> logging.Logger:

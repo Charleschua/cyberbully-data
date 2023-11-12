@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-tail -F anything
+tail -F anythoig

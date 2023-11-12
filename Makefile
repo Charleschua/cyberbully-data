@@ -27,7 +27,7 @@ guard-%:
 
 ## Call entrypoint
 version-data: up #instead of entrypoint: up
-	$(DOCKER_COMPOSE_EXEC) python ./cyberbully/version-data.py
+	$(DOCKER_COMPOSE_EXEC) python ./cyberbully/version_data.py
 
 ## Starts jupyter lab
 notebook: up
