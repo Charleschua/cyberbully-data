@@ -47,7 +47,7 @@ def commit_to_dvc(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
     run_shell_command(f"git commit -nm 'Updated version of the data from v{current_version} to {next_version}'")
     print("3")
     run_shell_command(f"git tag -a {next_version} -m 'Data version {next_version}'")
-    print('4')
+    print("4")
     run_shell_command(f"dvc push {dvc_raw_data_folder}.dvc --remote {dvc_remote_name}")
     print("5")
     run_shell_command("git push --follow-tags")
