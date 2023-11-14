@@ -41,19 +41,13 @@ def commit_to_dvc(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
         current_version = "0"
     next_version = f"v{int(current_version)+1}"
     run_shell_command(f"dvc add {dvc_raw_data_folder}")
-    print("1")
     run_shell_command("git add .")
-    print("2")
     run_shell_command(f"git commit -nm 'Updated version of the data from v{current_version} to {next_version}'")
-    print("3")
     run_shell_command(f"git tag -a {next_version} -m 'Data version {next_version}'")
-    print("4")
     run_shell_command(f"dvc push {dvc_raw_data_folder}.dvc --remote {dvc_remote_name}")
-    print("5")
     run_shell_command("git push --follow-tags")
-    print("6")
     run_shell_command("git push -f --tags")
-    print("7")
+   
 
 
 def make_new_data_version(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
