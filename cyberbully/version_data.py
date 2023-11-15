@@ -5,10 +5,9 @@ from cyberbully.utils.data_utils import initialize_dvc, initialize_dvc_storage, 
 
 @get_config(config_path="../configs", config_name="config")
 def version_data(config: Config) -> None:
-    
     # logger = get_logger(Path(__file__).name)
     # logger.info()
-    
+
     initialize_dvc()
     initialize_dvc_storage(config.dvc_remote_name, config.dvc_remote_url)
 
@@ -16,4 +15,4 @@ def version_data(config: Config) -> None:
 
 
 if __name__ == "__main__":
-    version_data()  # type: ignore
+    version_data()

@@ -1,9 +1,7 @@
-
 from pathlib import Path
 from subprocess import CalledProcessError
 
 from cyberbully.utils.utils import get_logger, run_shell_command
-
 
 DATA_UTILS_LOGGER = get_logger(Path(__file__).name)
 
@@ -47,7 +45,6 @@ def commit_to_dvc(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
     run_shell_command(f"dvc push {dvc_raw_data_folder}.dvc --remote {dvc_remote_name}")
     run_shell_command("git push --follow-tags")
     run_shell_command("git push -f --tags")
-   
 
 
 def make_new_data_version(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
