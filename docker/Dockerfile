@@ -7,7 +7,7 @@ ENV HOME=/home/${USER_NAME} \
 ENV \
   PYTHONUNBUFFERED=1 \
   DEBIAN_FRONTEND=noninteractive \
-  TZ=Asia/Southeast1 \
+  TZ=Asia/Singapore \
   PATH="/usr/local/gcloud/google-cloud-sdk/bin:${HOME}/.local/bin:${VIRTUAL_ENV}/bin:${PATH}" \
   PYTHONPATH="/app:${PYTHONPATH}" \
   BUILD_POETRY_LOCK="${HOME}/poetry.lock.build"
