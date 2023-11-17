@@ -39,20 +39,31 @@ def commit_to_dvc(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
         current_version = "0"
     next_version = f"v{int(current_version)+1}"
     run_shell_command(f"dvc add {dvc_raw_data_folder}")
+    print("5")
     run_shell_command("git add .")
+    print("6")
     run_shell_command(f"git commit -nm 'Updated version of the data from v{current_version} to {next_version}'")
+    print("7")
     run_shell_command(f"git tag -a {next_version} -m 'Data version {next_version}'")
+    print("1")
     run_shell_command(f"dvc push {dvc_raw_data_folder}.dvc --remote {dvc_remote_name}")
+    print("2")
     run_shell_command("git push --follow-tags")
+    print("3")
     run_shell_command("git push -f --tags")
+    print("4")
 
 
 def make_new_data_version(dvc_raw_data_folder: str, dvc_remote_name: str) -> None:
     try:
         status = run_shell_command(f"dvc status {dvc_raw_data_folder}.dvc")
+        print("8")
         if status == "Data and pipelines are up to date.\n":
             DATA_UTILS_LOGGER.info("Data and pipelines are up to date.")
+            print("11")
             return
+        print("9")
         commit_to_dvc(dvc_raw_data_folder, dvc_remote_name)
+        print("10")
     except CalledProcessError:
         commit_to_dvc(dvc_raw_data_folder, dvc_remote_name)
